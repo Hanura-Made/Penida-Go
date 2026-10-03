@@ -1,0 +1,63 @@
+---
+import { PRICING_LIST, SITE_INFO } from '@/data/landingData';
+---
+
+<section id="pricing" class="py-16 md:py-24 bg-slate-50 border-t border-slate-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
+        Simple & Transparent Pricing
+      </h2>
+      <p class="text-sm sm:text-base text-slate-600 mt-2">
+        Get a clear idea of the transfer rates before you book. No hidden surcharge.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+      <!-- Pricing Table (2 Cols) -->
+      <div class="lg:col-span-2 bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-slate-100/70 border-b border-slate-200 text-slate-700 uppercase tracking-wider text-xs font-semibold">
+              <tr>
+                <th scope="col" class="py-4 px-6">Route</th>
+                <th scope="col" class="py-4 px-6 text-right">Starting From</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 text-slate-700">
+              {
+                PRICING_LIST.map((row) => (
+                  <tr class="hover:bg-slate-50/80 transition-colors">
+                    <td class="py-3.5 px-6 font-medium text-slate-900">{row.route}</td>
+                    <td class="py-3.5 px-6 text-right font-bold text-ocean-700 whitespace-nowrap">{row.startingFrom}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Warning & Policy Notice Box -->
+      <div class="bg-white rounded-2xl border border-amber-200/80 p-6 shadow-sm space-y-4">
+        <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+        </div>
+        <h3 class="text-base font-bold text-slate-900">Tarif Fleksibel & Transparan</h3>
+        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+          Final price may vary depending on vehicle type (Sedan/SUV/HiAce Van), specific hotel pickup location, and customized itinerary requirements.
+        </p>
+        <div class="pt-2">
+          <a
+            href={SITE_INFO.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block w-full text-center bg-ocean-600 hover:bg-ocean-700 text-white font-semibold text-xs sm:text-sm py-3 px-4 rounded-lg transition-colors shadow-sm"
+          >
+            Get an Instant Quote on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

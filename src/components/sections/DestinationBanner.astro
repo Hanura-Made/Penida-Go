@@ -1,0 +1,43 @@
+---
+import Button from '@/components/ui/Button.astro';
+import { SITE_INFO } from '@/data/landingData';
+---
+
+<section class="relative py-24 md:py-32 overflow-hidden text-white">
+  <!-- Optimized Lazy Image -->
+  <div class="absolute inset-0 z-0">
+    <img
+      src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=1800&q=80"
+      alt="Aerial view of Nusa Penida pristine coastline and crystal clear waters"
+      width="1800"
+      height="800"
+      loading="lazy"
+      decoding="async"
+      class="w-full h-full object-cover object-center filter brightness-[0.7]"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-ocean-950/85 via-ocean-950/60 to-transparent"></div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl space-y-5">
+      <span class="text-xs uppercase tracking-widest font-bold text-sky-300">The Beauty of Nusa Penida</span>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight">
+        More Than a Destination, <br />It’s an Experience.
+      </h2>
+      <p class="text-slate-200 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl">
+        From stunning beaches to breathtaking cliffs, let us take you there safely and comfortably with professional local drivers who know every hidden gem.
+      </p>
+      <div class="pt-2 flex flex-wrap gap-4">
+        <Button
+          variant="white"
+          size="lg"
+          href={SITE_INFO.whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Explore Destinations
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>

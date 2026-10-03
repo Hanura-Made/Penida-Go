@@ -1,0 +1,40 @@
+---
+interface Props {
+  title: string;
+  defaultOpen?: boolean;
+}
+
+const { title, defaultOpen = false } = Astro.props;
+---
+
+<details
+  class="group border border-slate-200 rounded-lg bg-white overflow-hidden transition-colors duration-150 open:bg-slate-50/50"
+  open={defaultOpen}
+>
+  <summary
+    class="flex items-center justify-between p-4 sm:p-5 text-left font-medium text-slate-900 cursor-pointer list-none select-none hover:text-ocean-600 transition-colors"
+  >
+    <span class="text-base sm:text-lg">{title}</span>
+    <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-slate-400 group-hover:text-ocean-600">
+      <svg
+        class="w-5 h-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </span>
+  </summary>
+  <div class="px-4 pb-5 sm:px-5 sm:pb-5 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100">
+    <slot />
+  </div>
+</details>
+
+<style>
+  /* Remove native disclosure triangle */
+  summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

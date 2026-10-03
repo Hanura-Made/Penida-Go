@@ -1,0 +1,48 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+import Hero from '@/components/sections/Hero.astro';
+import PopularRoutes from '@/components/sections/PopularRoutes.astro';
+import Services from '@/components/sections/Services.astro';
+import DestinationBanner from '@/components/sections/DestinationBanner.astro';
+import HowItWorks from '@/components/sections/HowItWorks.astro';
+import Pricing from '@/components/sections/Pricing.astro';
+import Trust from '@/components/sections/Trust.astro';
+import Testimonials from '@/components/sections/Testimonials.astro';
+import FAQ from '@/components/sections/FAQ.astro';
+import FinalCTA from '@/components/sections/FinalCTA.astro';
+
+const pageTitle = "Penida-Go — Private Transfer Bali & Nusa Penida";
+const pageDescription = "Reliable private car transfer & fast boat tickets in Bali and Nusa Penida. Local drivers, fixed price, instant WhatsApp booking.";
+---
+
+<MainLayout title={pageTitle} description={pageDescription}>
+  <!-- 1. Hero Section (Title + Route Search + Trust Badges) -->
+  <Hero />
+
+  <!-- 2. Popular Routes (Route Cards) -->
+  <PopularRoutes />
+
+  <!-- 3. Services Section (Service Cards) -->
+  <Services />
+
+  <!-- 4. Destination / Visual Break Section -->
+  <DestinationBanner />
+
+  <!-- 5. How It Works (3 Steps) -->
+  <HowItWorks />
+
+  <!-- 6. Pricing Section (Table & Disclaimer) -->
+  <Pricing />
+
+  <!-- 7. Trust Section (Why Travelers Choose Us) -->
+  <Trust />
+
+  <!-- 8. Testimonials Section (Social Proof) -->
+  <Testimonials />
+
+  <!-- 9. FAQ Section (Accordion with FAQPage Schema) -->
+  <FAQ />
+
+  <!-- 10. Final CTA Banner -->
+  <FinalCTA />
+</MainLayout>
